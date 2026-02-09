@@ -1,111 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
   margin: 0;
-  background: #f4f6f8;
+  background: #f6f7fb;
 }
 
-.container {
+.page {
   display: flex;
   height: 100vh;
 }
 
-/* LEFT */
-.left-panel {
-  width: 55%;
-  background: #7e35d4;
-  color: white;
-  padding: 50px;
+/* LEFT PANEL */
+.left {
+  width: 58%;
+  background: linear-gradient(180deg, #8a38d6, #7b32c9);
+  color: #ffffff;
+  padding: 50px 60px;
+  position: relative;
 }
 
-.left-panel h1 {
-  margin-bottom: 5px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.version {
-  font-size: 12px;
+.logo {
+  font-size: 22px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand span {
+  font-size: 11px;
   opacity: 0.8;
 }
 
-.section {
-  margin-top: 30px;
+.info {
+  margin-top: 40px;
 }
 
-.section h3 {
+.info h3 {
+  font-size: 13px;
   letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
-footer {
+.info p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 520px;
+}
+
+.footer {
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* RIGHT PANEL */
+.right {
+  width: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafc;
+}
+
+.card {
+  width: 380px;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #5b5f6a;
+  margin-bottom: 25px;
+}
+
+label {
   font-size: 12px;
-  opacity: 0.8;
-}
-
-/* RIGHT */
-.right-panel {
-  width: 45%;
-  background: white;
-  padding: 80px 60px;
-}
-
-.right-panel h2 {
-  margin-bottom: 5px;
-}
-
-.right-panel p {
   color: #555;
-}
-
-form {
-  margin-top: 30px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
+  padding: 11px;
+  margin: 6px 0 15px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #dcdfe6;
+  font-size: 13px;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   border-radius: 6px;
   border: none;
+  font-size: 13px;
   cursor: pointer;
 }
 
-#login-btn {
-  background: #7e35d4;
+/* Buttons */
+.primary {
+  background: #8a38d6;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.outline-btn {
-  background: white;
-  border: 1px solid #7e35d4;
-  color: #7e35d4;
+.secondary {
   margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #dcdfe6;
 }
 
-.outline-btn:hover {
-  background: #7e35d4;
-  color: white;
+.outline {
+  border: 1px solid #8a38d6;
+  background: transparent;
+  color: #8a38d6;
 }
 
-.new-text {
-  margin-top: 30px;
-  font-size: 12px;
+.divider {
   text-align: center;
+  margin: 18px 0;
+  font-size: 11px;
+  color: #999;
 }
 
 .links {
   margin-top: 20px;
-  font-size: 12px;
   text-align: center;
+}
+
+.links a {
+  font-size: 11px;
+  color: #7b32c9;
+  margin: 0 6px;
+  text-decoration: none;
 }
