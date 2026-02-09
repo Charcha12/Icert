@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Panel */
+.branding-side {
+    flex: 1.2;
+    background-color: #7B2CBF; /* Vibrant Purple */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8%;
+    position: relative;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.icon-shield {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.info-block {
+    margin-bottom: 35px;
+}
+
+.info-block h3 {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.info-block p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 300;
+    max-width: 450px;
+}
+
+.portal-footer {
+    position: absolute;
+    bottom: 30px;
+    font-size: 0.65rem;
+    opacity: 0.6;
+}
+
+/* Right Panel */
+.login-side {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+}
+
+.login-box h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.login-instruction {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #fafafa;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 12px;
+}
+
+.btn-login {
+    background-color: #7B2CBF;
+    color: white;
+    border: none;
+}
+
+.btn-signup {
+    background-color: white;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.btn-create {
+    background-color: #fcfcfc;
+    color: #7B2CBF;
+    border: 1px solid #7B2CBF1A;
+}
+
+.divider {
+    text-align: center;
+    margin: 30px 0;
+    border-bottom: 1px solid #eee;
+    line-height: 0.1em;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 10px;
+    font-size: 0.7rem;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.legal-links {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.legal-links a {
+    font-size: 0.75rem;
+    color: #888;
+    text-decoration: none;
+}
