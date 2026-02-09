@@ -1,73 +1,54 @@
-const formTitle = document.getElementById("form-title");
-const formSubtitle = document.getElementById("form-subtitle");
-const authForm = document.getElementById("auth-form");
-const signupBtn = document.getElementById("signup-btn");
-const createAccountBtn = document.getElementById("create-account-btn");
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const submitBtn = document.getElementById("submitBtn");
+const signupBtn = document.getElementById("signupBtn");
+const createBtn = document.getElementById("createBtn");
+const form = document.getElementById("authForm");
 
-let mode = "login"; // login | signup
+let mode = "login";
 
-// Fake database using localStorage
 function getUsers() {
-  return JSON.parse(localStorage.getItem("users")) || [];
+  return JSON.parse(localStorage.getItem("icert_users")) || [];
 }
 
 function saveUsers(users) {
-  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("icert_users", JSON.stringify(users));
 }
 
-// LOGIN / SIGNUP SUBMIT
-authForm.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = email.value;
+  const password = password.value;
   const users = getUsers();
 
   if (mode === "login") {
-    const user = users.find(
-      (u) => u.email === email && u.password === password
-    );
-
-    if (user) {
-      alert("✅ Login successful! Welcome to the Resident Dashboard.");
-    } else {
-      alert("❌ Invalid email or password.");
-    }
+    const match = users.find(u => u.email === email && u.password === password);
+    alert(match ? "Login successful" : "Invalid credentials");
   } else {
-    if (users.some((u) => u.email === email)) {
-      alert("⚠️ Account already exists.");
+    if (users.find(u => u.email === email)) {
+      alert("Account already exists");
       return;
     }
-
     users.push({ email, password });
     saveUsers(users);
-
-    alert("🎉 Account created successfully!");
-    switchToLogin();
+    alert("Account created");
+    switchLogin();
   }
 });
 
-// SWITCH TO SIGNUP
-signupBtn.addEventListener("click", () => {
-  mode = "signup";
-  formTitle.innerText = "Create Account";
-  formSubtitle.innerText = "Register as a new resident.";
-  document.getElementById("login-btn").innerText = "Register";
-});
+signupBtn.onclick = () => switchSignup("Create Account", "Register as a new resident.");
+createBtn.onclick = () => switchSignup("Create New Resident Account", "Please fill in the details to register.");
 
-// CREATE ACCOUNT BUTTON
-createAccountBtn.addEventListener("click", () => {
+function switchSignup(t, s) {
   mode = "signup";
-  formTitle.innerText = "Create New Resident Account";
-  formSubtitle.innerText = "Please fill in the details to register.";
-  document.getElementById("login-btn").innerText = "Create Account";
-});
+  title.innerText = t;
+  subtitle.innerText = s;
+  submitBtn.innerText = "Create Account";
+}
 
-// BACK TO LOGIN AFTER SIGNUP
-function switchToLogin() {
+function switchLogin() {
   mode = "login";
-  formTitle.innerText = "Secure Access";
-  formSubtitle.innerText =
-    "Please enter your credentials to access the resident dashboard.";
-  document.getElementById("login-btn").innerText = "Log in";
+  title.innerText = "Secure Access";
+  subtitle.innerText = "Please enter your credentials to access the resident dashboard and manage your certificates.";
+  submitBtn.innerText = "Log in";
 }
